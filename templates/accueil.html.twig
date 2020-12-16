@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags --> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Regal Admin</title>
+  <!-- base:css -->
+  <link rel="stylesheet" href="{{ asset("template/vendors/mdi/css/materialdesignicons.min.css")}}">
+  <link rel="stylesheet" href="{{ asset("template/vendors/feather/feather.css")}}">
+  <link rel="stylesheet" href="{{ asset("template/vendors/base/vendor.bundle.base.css")}}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <link rel="stylesheet" href="{{ asset("template/vendors/flag-icon-css/css/flag-icon.min.css")}}"/>
+  <link rel="stylesheet" href="{{ asset("template/vendors/font-awesome/css/font-awesome.min.css")}}">
+  <link rel="stylesheet" href="{{ asset("template/vendors/jquery-bar-rating/fontawesome-stars-o.css")}}">
+  <link rel="stylesheet" href="{{ asset("template/vendors/jquery-bar-rating/fontawesome-stars.css")}}">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{{ asset("template/css/style.css")}}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{{asset("template/images/favicon.png")}}" />
+</head>
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        
+      </div>
+    
+        
+       
+        
+      
+      </div>
+    </nav>
+ 
+    <div class="container-fluid page-body-wrapper">
+    
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <div class="user-profile">
+
+
+
+        </div>
+         
+        <ul class="nav">
+         {% if is_granted('ROLE_GERANT') %}
+                       <li class="nav-item">
+            <a class="nav-link" href="{{path('salle')}}">
+              <i class="icon-box menu-icon"></i>
+              <span class="menu-title">SALLE</span>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{{path('machine')}}">
+              <i class="icon-book menu-icon"></i>
+              <span class="menu-title">MACHINE</span>
+            </a>
+          </li>
+        {% endif %}
+         
+           {% if is_granted('ROLE_USER') %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{path('accueil')}}">
+              <i class="icon-pie-graph menu-icon"></i>
+              <span class="menu-title">ACCUEIL</span>
+            </a>
+          </li>
+              {% endif %}
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{{path('app_logout')}}">
+              <i class="icon-book menu-icon"></i>
+              <span class="menu-title">DECONNEXION</span>
+            </a>
+          </li>
+        </ul>
+       
+      </nav><br><br>
+                         {% block body %}
+
+
+                         
+                 {% endblock %} 
+    
+    </div>
+      
+      
+  </div>
+  
+
+  <script src="vendors/base/vendor.bundle.base.js"></script>
+  
+ 
+  <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script>
+  <script src="js/template.js"></script>
+ 
+
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/jquery-bar-rating/jquery.barrating.min.js"></script>
+
+
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

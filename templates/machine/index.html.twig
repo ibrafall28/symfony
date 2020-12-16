@@ -1,0 +1,46 @@
+{% extends 'accueil.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="container ">
+        <div class="card">
+            <div class="card-header"> la liste des Machines</div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>adresse ip </th>
+                        <th>adresse mac</th>
+                        <th>Marque</th>
+                        <th>salle</th>
+                         <th>nom  user</th>
+                    </tr>
+                    {% for s in machines %}
+                        <tr>
+                            <td>{{ s.id }}</td>
+                            <td>{{ s.ipadresse }}</td>
+                            <td>{{ s.macadresse }}</td>
+                             <td>{{ s.marque }}</td>
+                              <td>{{ s.salle }}</td>
+                               <td>{{ s.users }}</td>
+                        </tr>
+                     {%endfor%}
+                </table>
+            
+</div>
+        </div>
+                <br><br>    
+    </div>
+                     
+    <div class="container col-md-6 col-lg-6 col-sm-6 col-xs-6">
+        <div class="card">
+            <div class="card-header"> formilaire de Gestion des machines</div>
+            <div class="card-body">
+                {{ form(form )}}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

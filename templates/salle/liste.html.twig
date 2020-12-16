@@ -1,0 +1,30 @@
+
+
+
+
+{% block body %}
+
+                <table >
+                    <tr>
+                        <th>Identifiant</th>
+                        <th>nom</th>
+                      
+                      
+                    </tr>
+                    {% for s in salles %}
+                        <tr>
+                            <td>{{ s.id }}</td>
+                            <td>{{ s.nom }}</td>
+                         
+                          
+                           
+                        </tr>
+                     {%endfor%}
+                </table>
+               <a href="{{ path('liste' ) }}">imprimer<a/>
+            
+
+                     
+  
+    
+{% endblock %}
